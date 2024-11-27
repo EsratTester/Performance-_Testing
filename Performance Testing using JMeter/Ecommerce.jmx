@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.6.3">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan">
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group">
+        <intProp name="ThreadGroup.num_threads">500</intProp>
+        <intProp name="ThreadGroup.ramp_time">1</intProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <stringProp name="LoopController.loops">1</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Products">
+          <stringProp name="HTTPSampler.domain">fake-store-api.mock.beeceptor.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;product_id&quot;: 1,&#xd;
+    &quot;name&quot;: &quot;Smartphone&quot;,&#xd;
+    &quot;description&quot;: &quot;High-end smartphone with advanced features.&quot;,&#xd;
+    &quot;price&quot;: 599.99,&#xd;
+    &quot;unit&quot;: &quot;Piece&quot;,&#xd;
+    &quot;image&quot;: &quot;https://example.com/images/smartphone.jpg&quot;,&#xd;
+    &quot;discount&quot;: 10,&#xd;
+    &quot;availability&quot;: true,&#xd;
+    &quot;brand&quot;: &quot;BrandX&quot;,&#xd;
+    &quot;category&quot;: &quot;Electronics&quot;,&#xd;
+    &quot;rating&quot;: 4.5,&#xd;
+    &quot;reviews&quot;: [&#xd;
+      {&#xd;
+        &quot;user_id&quot;: 1,&#xd;
+        &quot;rating&quot;: 5,&#xd;
+        &quot;comment&quot;: &quot;Great phone with a superb camera!&quot;&#xd;
+      },&#xd;
+      {&#xd;
+        &quot;user_id&quot;: 2,&#xd;
+        &quot;rating&quot;: 4,&#xd;
+        &quot;comment&quot;: &quot;Good performance, but the battery life could be better.&quot;&#xd;
+      }&#xd;
+    ]&#xd;
+  },&#xd;
+  {&#xd;
+    &quot;product_id&quot;: 2,&#xd;
+    &quot;name&quot;: &quot;Laptop&quot;,&#xd;
+    &quot;description&quot;: &quot;Powerful laptop for work and gaming.&quot;,&#xd;
+    &quot;price&quot;: 999.99,&#xd;
+    &quot;unit&quot;: &quot;Piece&quot;,&#xd;
+    &quot;image&quot;: &quot;https://example.com/images/laptop.jpg&quot;,&#xd;
+    &quot;discount&quot;: 5,&#xd;
+    &quot;availability&quot;: true,&#xd;
+    &quot;brand&quot;: &quot;BrandY&quot;,&#xd;
+    &quot;category&quot;: &quot;Electronics&quot;,&#xd;
+    &quot;rating&quot;: 4.7,&#xd;
+    &quot;reviews&quot;: [&#xd;
+      {&#xd;
+        &quot;user_id&quot;: 3,&#xd;
+        &quot;rating&quot;: 5,&#xd;
+        &quot;comment&quot;: &quot;Excellent laptop for gaming and work tasks.&quot;&#xd;
+      },&#xd;
+      {&#xd;
+        &quot;user_id&quot;: 4,&#xd;
+        &quot;rating&quot;: 4,&#xd;
+        &quot;comment&quot;: &quot;Good value for the price.&quot;&#xd;
+      }&#xd;
+    ]&#xd;
+  },&#xd;
+  {&#xd;
+    &quot;product_id&quot;: 3,&#xd;
+    &quot;name&quot;: &quot;Wireless Headphones&quot;,&#xd;
+    &quot;description&quot;: &quot;Premium wireless headphones with noise-cancellation.&quot;,&#xd;
+    &quot;price&quot;: 149.99,&#xd;
+    &quot;unit&quot;: &quot;Piece&quot;,&#xd;
+    &quot;image&quot;: &quot;https://example.com/images/headphones.jpg&quot;,&#xd;
+    &quot;discount&quot;: 15,&#xd;
+    &quot;availability&quot;: true,&#xd;
+    &quot;brand&quot;: &quot;SoundMasters&quot;,&#xd;
+    &quot;category&quot;: &quot;Electronics&quot;,&#xd;
+    &quot;rating&quot;: 4.8,&#xd;
+    &quot;reviews&quot;: [&#xd;
+      {&#xd;
+        &quot;user_id&quot;: 5,&#xd;
+        &quot;rating&quot;: 5,&#xd;
+        &quot;comment&quot;: &quot;Top-notch sound quality and comfort.&quot;&#xd;
+      },&#xd;
+      {&#xd;
+        &quot;user_id&quot;: 6,&#xd;
+        &quot;rating&quot;: 4,&#xd;
+        &quot;comment&quot;: &quot;Impressive noise-cancellation, but a bit pricey.&quot;&#xd;
+      }&#xd;
+    ]&#xd;
+  },&#xd;
+  {&#xd;
+    &quot;product_id&quot;: 4,&#xd;
+    &quot;name&quot;: &quot;Smartwatch&quot;,&#xd;
+    &quot;description&quot;: &quot;Feature-packed smartwatch with fitness tracking.&quot;,&#xd;
+    &quot;price&quot;: 199.99,&#xd;
+    &quot;unit&quot;: &quot;Piece&quot;,&#xd;
+    &quot;image&quot;: &quot;https://example.com/images/smartwatch.jpg&quot;,&#xd;
+    &quot;discount&quot;: 10,&#xd;
+    &quot;availability&quot;: true,&#xd;
+    &quot;brand&quot;: &quot;TechWear&quot;,&#xd;
+    &quot;category&quot;: &quot;Wearables&quot;,&#xd;
+    &quot;rating&quot;: 4.6,&#xd;
+    &quot;reviews&quot;: [&#xd;
+      {&#xd;
+        &quot;user_id&quot;: 7,&#xd;
+        &quot;rating&quot;: 4,&#xd;
+        &quot;comment&quot;: &quot;Great value for the features it offers.&quot;&#xd;
+      },&#xd;
+      {&#xd;
+        &quot;user_id&quot;: 8,&#xd;
+        &quot;rating&quot;: 5,&#xd;
+        &quot;comment&quot;: &quot;Sleek design and accurate fitness tracking.&quot;&#xd;
+      }&#xd;
+    ]&#xd;
+  },&#xd;
+  {&#xd;
+    &quot;product_id&quot;: 5,&#xd;
+    &quot;name&quot;: &quot;Professional DSLR Camera&quot;,&#xd;
+    &quot;description&quot;: &quot;High-quality DSLR camera for photography enthusiasts.&quot;,&#xd;
+    &quot;price&quot;: 499.99,&#xd;
+    &quot;unit&quot;: &quot;Piece&quot;,&#xd;
+    &quot;image&quot;: &quot;https://example.com/images/camera.jpg&quot;,&#xd;
+    &quot;discount&quot;: 5,&#xd;
+    &quot;availability&quot;: true,&#xd;
+    &quot;brand&quot;: &quot;PhotoPro&quot;,&#xd;
+    &quot;category&quot;: &quot;Cameras&quot;,&#xd;
+    &quot;rating&quot;: 4.9,&#xd;
+    &quot;reviews&quot;: [&#xd;
+      {&#xd;
+        &quot;user_id&quot;: 9,&#xd;
+        &quot;rating&quot;: 5,&#xd;
+        &quot;comment&quot;: &quot;Exceptional image quality and versatility.&quot;&#xd;
+      },&#xd;
+      {&#xd;
+        &quot;user_id&quot;: 10,&#xd;
+        &quot;rating&quot;: 4,&#xd;
+        &quot;comment&quot;: &quot;A bit heavy, but the results are worth it.&quot;&#xd;
+      }&#xd;
+    ]&#xd;
+  },&#xd;
+  {&#xd;
+    &quot;product_id&quot;: 6,&#xd;
+    &quot;name&quot;: &quot;Smart TV&quot;,&#xd;
+    &quot;description&quot;: &quot;High-definition smart TV with built-in streaming apps.&quot;,&#xd;
+    &quot;price&quot;: 799.99,&#xd;
+    &quot;unit&quot;: &quot;Piece&quot;,&#xd;
+    &quot;image&quot;: &quot;https://example.com/images/tv.jpg&quot;,&#xd;
+    &quot;discount&quot;: 8,&#xd;
+    &quot;availability&quot;: true,&#xd;
+    &quot;brand&quot;: &quot;ViewTech&quot;,&#xd;
+    &quot;category&quot;: &quot;Electronics&quot;,&#xd;
+    &quot;rating&quot;: 4.7,&#xd;
+    &quot;reviews&quot;: [&#xd;
+      {&#xd;
+        &quot;user_id&quot;: 11,&#xd;
+        &quot;rating&quot;: 5,&#xd;
+        &quot;comment&quot;: &quot;Stunning picture quality and user-friendly interface.&quot;&#xd;
+      },&#xd;
+      {&#xd;
+        &quot;user_id&quot;: 12,&#xd;
+        &quot;rating&quot;: 4,&#xd;
+        &quot;comment&quot;: &quot;A great addition to our home entertainment setup.&quot;&#xd;
+      }&#xd;
+    ]&#xd;
+  },&#xd;
+  {&#xd;
+    &quot;product_id&quot;: 7,&#xd;
+    &quot;name&quot;: &quot;Tablet&quot;,&#xd;
+    &quot;description&quot;: &quot;Compact tablet for productivity and entertainment.&quot;,&#xd;
+    &quot;price&quot;: 299.99,&#xd;
+    &quot;unit&quot;: &quot;Piece&quot;,&#xd;
+    &quot;image&quot;: &quot;https://example.com/images/tablet.jpg&quot;,&#xd;
+    &quot;discount&quot;: 12,&#xd;
+    &quot;availability&quot;: true,&#xd;
+    &quot;brand&quot;: &quot;TabTech&quot;,&#xd;
+    &quot;category&quot;: &quot;Electronics&quot;,&#xd;
+    &quot;rating&quot;: 4.4,&#xd;
+    &quot;reviews&quot;: [&#xd;
+      {&#xd;
+        &quot;user_id&quot;: 13,&#xd;
+        &quot;rating&quot;: 4,&#xd;
+        &quot;comment&quot;: &quot;Good value for the price, but the battery life could be better.&quot;&#xd;
+      },&#xd;
+      {&#xd;
+        &quot;user_id&quot;: 14,&#xd;
+        &quot;rating&quot;: 5,&#xd;
+        &quot;comment&quot;: &quot;Ideal for both work and entertainment on the go.&quot;&#xd;
+      }&#xd;
+    ]&#xd;
+  },&#xd;
+  {&#xd;
+    &quot;product_id&quot;: 8,&#xd;
+    &quot;name&quot;: &quot;Gaming Console&quot;,&#xd;
+    &quot;description&quot;: &quot;Next-gen gaming console for immersive gaming experiences.&quot;,&#xd;
+    &quot;price&quot;: 399.99,&#xd;
+    &quot;unit&quot;: &quot;Piece&quot;,&#xd;
+    &quot;image&quot;: &quot;https://example.com/images/console.jpg&quot;,&#xd;
+    &quot;discount&quot;: 10,&#xd;
+    &quot;availability&quot;: true,&#xd;
+    &quot;brand&quot;: &quot;GameX&quot;,&#xd;
+    &quot;category&quot;: &quot;Gaming&quot;,&#xd;
+    &quot;rating&quot;: 4.8,&#xd;
+    &quot;reviews&quot;: [&#xd;
+      {&#xd;
+        &quot;user_id&quot;: 15,&#xd;
+        &quot;rating&quot;: 5,&#xd;
+        &quot;comment&quot;: &quot;Incredible gaming performance and graphics.&quot;&#xd;
+      },&#xd;
+      {&#xd;
+        &quot;user_id&quot;: 16,&#xd;
+        &quot;rating&quot;: 4,&#xd;
+        &quot;comment&quot;: &quot;A must-have for gaming enthusiasts.&quot;&#xd;
+      }&#xd;
+    ]&#xd;
+  },&#xd;
+  {&#xd;
+    &quot;product_id&quot;: 9,&#xd;
+    &quot;name&quot;: &quot;Energy-Efficient Refrigerator&quot;,&#xd;
+    &quot;description&quot;: &quot;Modern refrigerator with energy-saving features.&quot;,&#xd;
+    &quot;price&quot;: 599.99,&#xd;
+    &quot;unit&quot;: &quot;Piece&quot;,&#xd;
+    &quot;image&quot;: &quot;https://example.com/images/refrigerator.jpg&quot;,&#xd;
+    &quot;discount&quot;: 5,&#xd;
+    &quot;availability&quot;: true,&#xd;
+    &quot;brand&quot;: &quot;CoolTech&quot;,&#xd;
+    &quot;category&quot;: &quot;Appliances&quot;,&#xd;
+    &quot;rating&quot;: 4.6&#xd;
+  } </stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Users">
+          <stringProp name="HTTPSampler.domain">fake-store-api.mock.beeceptor.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{ &quot;user_id&quot;: 1, &quot;username&quot;: &quot;john_doe&quot;, &quot;email&quot;: &quot;john@example.com&quot;, &quot;password&quot;: &quot;hashed_password&quot; },&#xd;
+  { &quot;user_id&quot;: 2, &quot;username&quot;: &quot;jane_smith&quot;, &quot;email&quot;: &quot;jane@example.com&quot;, &quot;password&quot;: &quot;hashed_password&quot; },&#xd;
+  { &quot;user_id&quot;: 3, &quot;username&quot;: &quot;bob_johnson&quot;, &quot;email&quot;: &quot;bob@example.com&quot;, &quot;password&quot;: &quot;hashed_password&quot; },&#xd;
+  { &quot;user_id&quot;: 4, &quot;username&quot;: &quot;susan_wilson&quot;, &quot;email&quot;: &quot;susan@example.com&quot;, &quot;password&quot;: &quot;hashed_password&quot; },&#xd;
+  { &quot;user_id&quot;: 5, &quot;username&quot;: &quot;mike_anderson&quot;, &quot;email&quot;: &quot;mike@example.com&quot;, &quot;password&quot;: &quot;hashed_password&quot; }</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Carts">
+          <stringProp name="HTTPSampler.domain">fake-store-api.mock.beeceptor.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{ &quot;cart_id&quot;: 1, &quot;user_id&quot;: 1, &quot;items&quot;: [ { &quot;product_id&quot;: 1, &quot;quantity&quot;: 2 }, { &quot;product_id&quot;: 3, &quot;quantity&quot;: 1 } ] }</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Orders_Status">
+          <stringProp name="HTTPSampler.domain">fake-store-api.mock.beeceptor.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+  &quot;order_id&quot;: 1,&#xd;
+  &quot;user_id&quot;: 1,&#xd;
+  &quot;status&quot;: &quot;Shipped&quot;,&#xd;
+  &quot;total_price&quot;: 849.97,&#xd;
+  &quot;items&quot;: [ { &quot;product_id&quot;: 1, &quot;quantity&quot;: 2 }, { &quot;product_id&quot;: 3, &quot;quantity&quot;: 1 } ]&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Get_Orders">
+          <stringProp name="HTTPSampler.domain">fake-store-api.mock.beeceptor.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">  { &quot;order_id&quot;: 1, &quot;user_id&quot;: 1, &quot;items&quot;: [ { &quot;product_id&quot;: 1, &quot;quantity&quot;: 2 }, { &quot;product_id&quot;: 3, &quot;quantity&quot;: 1 } ], &quot;total_price&quot;: 849.97, &quot;status&quot;: &quot;Shipped&quot; },&#xd;
+  { &quot;order_id&quot;: 2, &quot;user_id&quot;: 2, &quot;items&quot;: [ { &quot;product_id&quot;: 2, &quot;quantity&quot;: 1 }, { &quot;product_id&quot;: 7, &quot;quantity&quot;: 1 } ], &quot;total_price&quot;: 1149.98, &quot;status&quot;: &quot;Delivered&quot; },&#xd;
+  { &quot;order_id&quot;: 3, &quot;user_id&quot;: 3, &quot;items&quot;: [ { &quot;product_id&quot;: 4, &quot;quantity&quot;: 1 }, { &quot;product_id&quot;: 8, &quot;quantity&quot;: 1 } ], &quot;total_price&quot;: 599.98, &quot;status&quot;: &quot;Processing&quot; },&#xd;
+  { &quot;order_id&quot;: 4, &quot;user_id&quot;: 4, &quot;items&quot;: [ { &quot;product_id&quot;: 5, &quot;quantity&quot;: 1 }, { &quot;product_id&quot;: 10, &quot;quantity&quot;: 2 } ], &quot;total_price&quot;: 1099.97, &quot;status&quot;: &quot;Shipped&quot; },&#xd;
+  { &quot;order_id&quot;: 5, &quot;user_id&quot;: 5, &quot;items&quot;: [ { &quot;product_id&quot;: 6, &quot;quantity&quot;: 1 }, { &quot;product_id&quot;: 9, &quot;quantity&quot;: 1 } ], &quot;total_price&quot;: 1399.98, &quot;status&quot;: &quot;Delivered&quot; }</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Put_Orders">
+          <stringProp name="HTTPSampler.domain">fake-store-api.mock.beeceptor.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">PUT</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value"> {&#xd;
+  &quot;order_id&quot;: 6,&#xd;
+  &quot;status&quot;: &quot;Placed&quot;,&#xd;
+  &quot;message&quot;: &quot;Order successfully placed.&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
