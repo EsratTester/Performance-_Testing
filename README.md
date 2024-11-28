@@ -1,6 +1,3 @@
-
-# Project Title
-
 # Performance_Testing
 
 Testing Site - "https://restful-booker.herokuapp.com"
