@@ -24,6 +24,7 @@ Click =>Binaries
 =>apache-jmeter-5.6.3.zip
 
 We use BlazeMeter,Lighthouse to generate JMX files
+
 https://chrome.google.com/webstore/detail/blazemeter-the-continuous/mbopgmdnpcbohhpnfglgohlbhfongabi?hl=en,
 
 https://chromewebstore.google.com/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk
@@ -31,7 +32,7 @@ https://chromewebstore.google.com/detail/lighthouse/blipmdconlkpinefehnmjammfjpm
 
 # Prerequisites
 
-- As of JMeter 5.6, Java 8 and above are supported.
+- As of JMeter 5.6, Java 8+ and above are supported.
 - we suggest multicore cpus with 4 or more cores.
 - Memory 16GB RAM is a good value.
 
